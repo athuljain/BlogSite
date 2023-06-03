@@ -1,5 +1,5 @@
 
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef, useEffect } from "react";
 import { BlogContext } from "./Context";
 import { useNavigate } from "react-router-dom";
 import "./CreateBlog.css"
@@ -29,6 +29,10 @@ function CreateBlog() {
     console.log(title,content,id);
     navigate("/blog");
   };
+  useEffect(()=>{
+    inputRef.current.title.focus()
+  })
+  
 
   return (
     <div className="mainPage">
